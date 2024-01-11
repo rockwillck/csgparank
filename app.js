@@ -1,9 +1,3 @@
-// Start coding here
-const quadratic = {a:84.6508, b:-902.4983, c:2381.18}
-const a = quadratic.a
-const b = quadratic.b
-const c = quadratic.c
-
 function gpaToRank(gpa) {
     return Math.round(445500000 * 0.02472**gpa)
 }
@@ -18,13 +12,13 @@ function rankToGpa(rank) {
 }
 
 function updateRank(gpa) {
-    if (parseFloat(gpa) != NaN) {
+    if (!isNaN(parseFloat(gpa))) {
         document.getElementById("rank").value = gpaToRank(parseFloat(gpa))
     }
 }
 
 function updateGPA(rank) {
-    if (parseInt(rank) != NaN) {
+    if (!isNaN(parseInt(rank))) {
         document.getElementById("GPA").value = Math.round(rankToGpa(parseInt(rank))*1000)/1000
     }
 }
